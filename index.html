@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marauder's Map | Harry Potter</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="map">
+
+        <div class="stars">✦ ✧ ✦ ✧ ✦</div> <!--Decoração na pagina-->
+
+        <!--lema oficial de Hogwarts/ decoração-->
+        <header>
+            <p class="small-title">
+                DRACO DORMIENS NUNQUAM TITILLANDUS
+            </p>
+
+            <h1>Marauder's Map</h1> <!--Nome do site-->
+
+            <!--Lema dos marotos/ decoração-->
+            <p class="subtitle">
+                “Juro solenemente que não há nada de bom aqui.”
+            </p>
+        </header>
+
+        <!--Contando o que o site faz-->
+        <section class="intro">
+
+            <p>
+                Explore um personagem do mundo mágico usando dados reais
+                de uma API pública.
+            </p>
+
+            <!--Botão para ver os personagens-->
+            <button id="revealButton">
+                🪄 Revelar personagem
+            </button>
+
+        </section>
+
+        <section id="result" class="result hidden">
+
+            <div class="character-image-wrap">
+                <img id="characterImage" src="" alt="Imagem do personagem">
+            </div>
+
+            <div class="character-info">
+
+                <p class="label">
+                    PERSONAGEM ENCONTRADO
+                </p>
+
+                <h2 id="characterName">—</h2>
+
+                <p>
+                    <strong>Apelido:</strong>
+                    <span id="nickname">—</span>
+                </p>
+
+                <p>
+                    <strong>Casa:</strong>
+                    <span id="house">—</span>
+                </p>
+
+                <p>
+                    <strong>Interpretado por:</strong>
+                    <span id="actor">—</span>
+                </p>
+
+                <p>
+                    <strong>Nascimento:</strong>
+                    <span id="birthdate">—</span>
+                </p>
+
+            </div>
+
+        </section>
+
+        <p id="status" class="status">
+            Clique no botão para consultar a API.
+        </p>
+
+        <footer>
+            <span>API: PotterAPI</span>
+            <span>•</span>
+            <span>Projeto de consulta a API pública</span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
