@@ -1,271 +1,271 @@
+/* Faz com que padding e border sejam incluídos no tamanho dos elementos */
 * {
     box-sizing: border-box;
 }
 
+/* Configura o comportamento geral da página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Configura o corpo da página */
 body {
     margin: 0;
-    min-height: 100vh;
+    padding: 10px;
 
+    /* Cor de fundo escura */
+    background-color: #11100e;
+
+    /* Cor padrão dos textos */
+    color: #2b2117;
+
+    /* Fonte principal */
+    font-family: "IM Fell English", Georgia, serif;
+
+    /* Centraliza o conteúdo */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding: 24px;
-
-    color: #2b2117;
-
-    background:
-        radial-gradient(circle at 20% 20%,
-            rgba(255, 255, 255, .08),
-            transparent 25%),
-        radial-gradient(circle at 80% 80%,
-            rgba(0, 0, 0, .25),
-            transparent 30%),
-        #11100e;
-
-    font-family: "IM Fell English", Georgia, serif;
 }
 
+/* Área principal que imita um mapa antigo */
 .map {
-    width: min(960px, 100%);
+    width: 100%;
+    max-width: 960px;
     min-height: 680px;
 
-    padding: 42px;
+    padding: 25px 18px;
+
+    /* Fundo parecido com papel antigo */
+    background:
+        linear-gradient(rgba(245, 226, 180, 0.95),
+            rgba(220, 194, 142, 0.95));
+
+    /* Borda do mapa */
+    border: 4px solid #2b2117;
+
+    /* Sombra ao redor */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
 
     position: relative;
     overflow: hidden;
-
-    border: 5px double #382a1a;
-
-    box-shadow:
-        0 18px 50px rgba(0, 0, 0, .55);
-
-    background:
-        linear-gradient(rgba(240, 226, 184, .93),
-            rgba(221, 204, 157, .94));
 }
 
-.map::before,
-.map::after {
-    content: "✦";
-
+/* Decoração do mapa */
+.map::before {
+    content: "";
     position: absolute;
 
-    font-size: 120px;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
 
-    opacity: .10;
+    border: 1px solid rgba(43, 33, 23, 0.5);
 
     pointer-events: none;
 }
 
-.map::before {
-    top: -25px;
-    left: 15px;
-}
-
-.map::after {
-    bottom: -30px;
-    right: 20px;
-}
-
-.stars {
-    text-align: center;
-
-    font-size: 24px;
-
-    letter-spacing: 16px;
-
-    margin-bottom: 10px;
-}
-
+/* Cabeçalho da página */
 header {
     text-align: center;
-
-    border-bottom: 1px solid rgba(43, 33, 23, .45);
-
-    padding-bottom: 22px;
+    margin-bottom: 30px;
 }
 
-.small-title,
-.label {
-    font-family: "Cinzel", serif;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    font-weight: 700;
+/* Texto pequeno acima do título */
+.small-title {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
+/* Título principal */
 h1 {
-    margin: 8px 0 0;
+    margin: 10px 0;
 
-    font-family: "Cinzel", serif;
-
+    /* O tamanho se adapta à tela */
     font-size: clamp(38px, 7vw, 72px);
 
     line-height: 1;
 }
 
+/* Subtítulo */
 .subtitle {
-    font-style: italic;
-
+    margin: 0;
     font-size: 18px;
-
-    margin: 14px 0 0;
+    font-style: italic;
 }
 
+/* Área inicial com o texto e botão */
 .intro {
     text-align: center;
-
-    margin: 28px auto;
-
-    max-width: 650px;
-
-    font-size: 19px;
+    max-width: 600px;
+    margin: 0 auto 30px;
 }
 
+/* Texto da introdução */
+.intro p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Botão para revelar o personagem */
 button {
-    border: 2px solid #2b2117;
-
-    background: #2b2117;
-
-    color: #f2e5bd;
+    min-width: 44px;
+    min-height: 44px;
 
     padding: 14px 25px;
 
-    font-family: "Cinzel", serif;
+    border: 2px solid #2b2117;
+    background-color: #2b2117;
+    color: #f5e2b4;
 
-    font-weight: 700;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
 
     cursor: pointer;
 
-    transition:
-        transform .2s,
-        background .2s;
+    transition: 0.3s;
 }
 
+/* Efeito quando o mouse passa pelo botão */
 button:hover {
-    transform: translateY(-2px);
-
-    background: #493722;
+    background-color: #4a3827;
+    transform: scale(1.03);
 }
 
+/* Aparência do botão quando está desativado */
 button:disabled {
-    opacity: .6;
-
-    cursor: wait;
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
+/* Área onde as informações do personagem aparecem */
 .result {
     max-width: 720px;
+    margin: 0 auto;
 
-    margin: 30px auto 18px;
-
-    padding: 22px;
-
+    /* No celular os elementos ficam um abaixo do outro */
     display: grid;
-
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 1fr;
 
     gap: 25px;
 
-    align-items: center;
+    padding: 20px;
 
-    border: 1px dashed #57432a;
-
-    background: rgba(255, 248, 218, .38);
+    border: 2px solid rgba(43, 33, 23, 0.5);
 }
 
+/* Área da imagem */
+.character-image-wrapper {
+    width: 100%;
+    height: 280px;
+
+    overflow: hidden;
+
+    border: 3px solid #2b2117;
+}
+
+/* Imagem do personagem */
+.character-image-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    /* Faz a imagem preencher o espaço */
+    object-fit: cover;
+
+    display: block;
+}
+
+/* Informações do personagem */
+.character-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Nome do personagem */
+.character-info h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: 32px;
+}
+
+/* Parágrafos das informações */
+.character-info p {
+    margin: 7px 0;
+    font-size: 17px;
+}
+
+/* Mensagem de status */
+.status {
+    text-align: center;
+
+    margin: 25px auto;
+
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* Mensagem exibida quando estiver sem internet */
+.offline-status {
+    width: fit-content;
+    margin: 10px auto;
+
+    padding: 8px 15px;
+
+    border: 1px solid #2b2117;
+
+    font-weight: bold;
+}
+
+/* Classe usada para esconder elementos */
 .hidden {
     display: none;
 }
 
-.character-image-wrap {
-    height: 220px;
+/* Rodapé */
+footer {
+    margin-top: 40px;
 
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    overflow: hidden;
-
-    border: 2px solid #57432a;
-
-    background: rgba(0, 0, 0, .08);
-}
-
-.character-image-wrap img {
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.character-info h2 {
-    margin: 4px 0 15px;
-
-    font-family: "Cinzel", serif;
-
-    font-size: 30px;
-}
-
-.character-info p {
-    margin: 8px 0;
-
-    font-size: 17px;
-}
-
-.label {
-    margin-bottom: 0 !important;
-}
-
-.status {
     text-align: center;
 
-    font-style: italic;
-
-    min-height: 24px;
+    font-size: 14px;
 }
 
-footer {
-    margin-top: 28px;
-
-    padding-top: 15px;
-
-    border-top: 1px solid rgba(43, 33, 23, .35);
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    flex-wrap: wrap;
-
-    font-size: 13px;
-
-    opacity: .75;
+/* Espaçamento entre os textos do rodapé */
+footer p {
+    margin: 5px 0;
 }
 
-@media (max-width: 650px) {
+/*
+    RESPONSIVIDADE
 
+    Quando a tela for maior que 650px,
+    o conteúdo do personagem fica lado a lado.
+*/
+@media (min-width: 651px) {
+
+    /* Aumenta o espaço interno do mapa */
     body {
-        padding: 10px;
+        padding: 24px;
     }
 
     .map {
-        padding: 25px 18px;
+        padding: 42px;
     }
 
+    /* Coloca imagem e informações lado a lado */
     .result {
-        grid-template-columns: 1fr;
+        grid-template-columns: 180px 1fr;
     }
 
-    .character-image-wrap {
-        height: 280px;
+    /* Define o tamanho da imagem em telas maiores */
+    .character-image-wrapper {
+        height: 220px;
     }
 }

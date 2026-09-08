@@ -1,0 +1,21 @@
+{
+    "name": "Marauder's Map",
+    "short_name": "Marauder's Map",
+    "description": "Aplicativo para consultar personagens do mundo mágico.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#11100e",
+    "theme_color": "#2b2117",
+    "icons": [
+        {
+            "src": "icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

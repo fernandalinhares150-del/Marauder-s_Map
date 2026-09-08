@@ -3,103 +3,131 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Marauder's Map | Harry Potter</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 
 <body>
 
+    <!-- Área principal que representa o mapa -->
     <main class="map">
 
-        <div class="stars">✦ ✧ ✦ ✧ ✦</div> <!--Decoração na pagina-->
+        <!-- Estrelas usadas apenas como decoração -->
+        <div class="stars"></div>
 
-        <!--lema oficial de Hogwarts/ decoração-->
+        <!-- Cabeçalho da página -->
         <header>
-            <p class="small-title">
-                DRACO DORMIENS NUNQUAM TITILLANDUS
-            </p>
 
-            <h1>Marauder's Map</h1> <!--Nome do site-->
+            <!-- Pequeno título acima do título principal -->
+            <p class="small-title">O Mapa do Maroto</p>
 
-            <!--Lema dos marotos/ decoração-->
-            <p class="subtitle">
-                “Juro solenemente que não há nada de bom aqui.”
-            </p>
+            <!-- Título principal -->
+            <h1>Marauder's Map</h1>
+
+            <!-- Subtítulo -->
+            <p class="subtitle">Juro solenemente que não farei nada de bom.</p>
+
         </header>
 
-        <!--Contando o que o site faz-->
+        <!-- Texto explicando o funcionamento do projeto -->
         <section class="intro">
 
             <p>
-                Explore um personagem do mundo mágico usando dados reais
-                de uma API pública.
+                Explore um personagem do mundo mágico
+                usando uma API pública.
             </p>
 
-            <!--Botão para ver os personagens-->
+            <!-- Botão que consulta a API -->
             <button id="revealButton">
                 🪄 Revelar personagem
             </button>
 
         </section>
 
+        <!-- Área onde os dados do personagem serão mostrados -->
         <section id="result" class="result hidden">
 
-            <div class="character-image-wrap">
-                <img id="characterImage" src="" alt="Imagem do personagem">
+            <!-- Área da imagem do personagem -->
+            <div class="character-image-wrapper">
+
+                <!-- A imagem será preenchida pelo JavaScript -->
+                <img id="characterImage" src="" alt="Personagem">
+
             </div>
 
+            <!-- Informações do personagem -->
             <div class="character-info">
 
-                <p class="label">
-                    PERSONAGEM ENCONTRADO
-                </p>
+                <!-- Nome do personagem -->
+                <h2 id="characterName">Nome</h2>
 
-                <h2 id="characterName">—</h2>
-
+                <!-- Apelido -->
                 <p>
                     <strong>Apelido:</strong>
-                    <span id="nickname">—</span>
+                    <span id="nickname">Não informado</span>
                 </p>
 
+                <!-- Casa de Hogwarts -->
                 <p>
                     <strong>Casa:</strong>
-                    <span id="house">—</span>
+                    <span id="house">Não informado</span>
                 </p>
 
+                <!-- Ator -->
                 <p>
-                    <strong>Interpretado por:</strong>
-                    <span id="actor">—</span>
+                    <strong>Ator:</strong>
+                    <span id="actor">Não informado</span>
                 </p>
 
+                <!-- Data de nascimento -->
                 <p>
                     <strong>Nascimento:</strong>
-                    <span id="birthdate">—</span>
+                    <span id="birthdate">Não informado</span>
                 </p>
 
             </div>
 
         </section>
 
+        <!-- Mensagem que mostra o estado da consulta -->
         <p id="status" class="status">
             Clique no botão para consultar a API.
         </p>
 
-        <footer>
-            <span>API: PotterAPI</span>
-            <span>•</span>
-            <span>Projeto de consulta a API pública</span>
-        </footer>
+        <!-- Mensagem que aparece quando o dispositivo fica sem internet -->
+        <div id="offlineStatus" class="offline-status hidden">
+            Você está offline.
+        </div>
 
+        <!-- Rodapé do projeto -->
         <footer>
-            <span>Fernanda de Almeida Linhares</span>
-        </footer>
 
+            <!-- API utilizada no projeto -->
+            <p>Dados fornecidos pela PotterAPI</p>
+
+            <!-- Descrição do projeto -->
+            <p>Projeto desenvolvido para estudo de API e PWA.</p>
+
+            <!-- Nome da aluna -->
+            <p>Fernanda de Almeida Linhares</p>
+
+        </footer>
 
     </main>
 
+    <!-- Arquivo JavaScript responsável pela interação da página -->
     <script src="script.js"></script>
 
 </body>
